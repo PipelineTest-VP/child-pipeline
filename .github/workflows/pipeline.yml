@@ -1,0 +1,28 @@
+name: ChildPipeline
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  repository_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks out pipeline repository
+      - name: 'Log payload'
+        run: |
+          echo ${{ github.event.client_payload.AppName }}
+          echo ${{ github.event.client_payload.AppCMDBID }}
+          echo ${{ github.event.client_payload.RequestorName }}
+          echo ${{ github.event.client_payload.ProjectName }}
+          echo ${{ github.event.client_payload.Service_req_number }}
+          echo ${{ github.event.client_payload.Message }}
+          echo ${{ github.event.client_payload.PackageRegistry }}
+          echo ${{ github.event.client_payload.PackageName }}
+          echo ${{ github.event.client_payload.DockerImageName }}
+          echo ${{ github.event.client_payload.GroupId }}
+          echo ${{ github.event.client_payload.ArtifactId }}
+          echo ${{ github.event.client_payload.VersionNumber }}
+          echo ${{ github.event.client_payload.Platform }}
