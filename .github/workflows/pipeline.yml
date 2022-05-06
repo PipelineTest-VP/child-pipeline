@@ -13,16 +13,16 @@ jobs:
       # Checks out pipeline repository
       - name: 'Log payload'
         run: |
-          echo ${{ github.event.client_payload.AppName }}
-          echo ${{ github.event.client_payload.AppCMDBID }}
+          echo ${{ github.event.client_payload.ApplicationDetails.AppName }}
+          echo ${{ github.event.client_payload.ApplicationDetails.AppCMDBID }}
           echo ${{ github.event.client_payload.RequestorName }}
-          echo ${{ github.event.client_payload.ProjectName }}
+          echo ${{ github.event.client_payload.ApplicationDetails.ProjectName }}
           echo ${{ github.event.client_payload.Service_req_number }}
           echo ${{ github.event.client_payload.Message }}
-          echo ${{ github.event.client_payload.PackageRegistry }}
-          echo ${{ github.event.client_payload.PackageName }}
-          echo ${{ github.event.client_payload.DockerImageName }}
-          echo ${{ github.event.client_payload.GroupId }}
-          echo ${{ github.event.client_payload.ArtifactId }}
-          echo ${{ github.event.client_payload.VersionNumber }}
+          echo ${{ github.event.client_payload.DependencyDetails.PackageRegistry }}
+          echo ${{ github.event.client_payload.DependencyDetails.PackageName }}
+          echo ${{ github.event.client_payload.DependencyDetails.DockerImageName }}
+          echo ${{ github.event.client_payload.DependencyDetails.GroupId }}
+          echo ${{ github.event.client_payload.DependencyDetails.ArtifactId }}
+          echo ${{ github.event.client_payload.DependencyDetails.VersionNumber }}
           echo ${{ github.event.client_payload.Platform }}
